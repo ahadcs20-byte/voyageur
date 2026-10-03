@@ -1,0 +1,1822 @@
+Title: ENTITIES: Malaysia Travel Information Types
+Content:
+=== ENTITY: malaysia_state ===
+Type: List Entity
+Purpose: Identifies which Malaysian state or city the user is asking about
+Values:
+- Kuala Lumpur (synonyms: KL, KL City, Kuala Lumpur City)
+- Penang (synonyms: Pulau Pinang, George Town)
+- Langkawi (synonyms: Pulau Langkawi, Langkawi Island)
+- Malacca (synonyms: Melaka, Malacca City)
+- Sabah (synonyms: North Borneo)
+- Sarawak
+- Johor (synonyms: Johor Bahru, JB)
+- Perak (synonyms: Ipoh)
+- Pahang
+- Terengganu
+- Kedah
+- Negeri Sembilan
+- Kelantan
+- Perlis
+- Putrajaya
+- Labuan
+=== ENTITY: budget ===
+Type: List Entity
+Purpose: Identifies user's budget preference
+Values:
+- budget (synonyms: cheap, economical, low cost, under 100, budget traveler, backpacker)
+- mid_range (synonyms: moderate, medium, mid-range, 100 to 300, comfortable)
+- premium (synonyms: expensive, premium, 300 to 600, high end)
+- luxury (synonyms: luxury, above 600, 5 star, ultra luxury)
+=== ENTITY: interest ===
+Type: List Entity
+Purpose: Identifies user's travel interests
+Values:
+- cultural (synonyms: culture, heritage, history, museum, temple, historical, traditional)
+- adventure (synonyms: hiking, water sports, extreme, outdoor, climbing, trekking, thrill, escape room)
+- food (synonyms: foodie, culinary, dining, restaurant, local food, street food, cuisine)
+- nature (synonyms: eco, sustainable, green, wildlife, jungle, rainforest, beach)
+- shopping (synonyms: shop, mall, souvenirs, retail, market, bargain)
+- relaxation (synonyms: spa, beach, chill, relax, wellness, massage, pool)
+=== ENTITY: cuisine ===
+Type: List Entity
+Purpose: Identifies food preferences
+Values:
+- malay (synonyms: malaysian, nasi lemak, rendang, malay food, local malaysian)
+- chinese (synonyms: dim sum, noodles, char kuey teow, chinese food, hokkien mee)
+- indian (synonyms: roti canai, curry, banana leaf, indian food, mamak)
+- seafood (synonyms: fish, prawn, crab, lobster, seafood restaurant)
+- vegetarian (synonyms: vegan, plant-based, veg, meat-free)
+- western (synonyms: western food, burger, pasta, steak, cafe)
+- japanese (synonyms: sushi, ramen, japanese food)
+- korean (synonyms: korean food, bbq, kimchi)
+- fusion (synonyms: modern, fusion cuisine, asian fusion)
+=== ENTITY: accessibility ===
+Type: List Entity
+Purpose: Identifies accessibility needs
+Values:
+- wheelchair (synonyms: wheelchair accessible, disabled, mobility, wheelchair user, accessible, handicapped)
+- visual_impairment (synonyms: blind, visually impaired, low vision)
+- hearing_impairment (synonyms: deaf, hard of hearing)
+=== ENTITY: activity ===
+Type: List Entity
+Purpose: Identifies preferred activities
+Values:
+- hiking (synonyms: trekking, jungle trek, mountain climb, trail, walking)
+- water_sports (synonyms: snorkeling, diving, jet ski, kayaking, parasailing, swimming)
+- photography (synonyms: photo, instagram, picture, scenic, view)
+- museum_visit (synonyms: museum, gallery, exhibition, art)
+- shopping (synonyms: shop, mall, buy, souvenir)
+- escape_room (synonyms: escape game, puzzle room, mystery room)
+- theme_park (synonyms: amusement park, water park, rides, attraction park)
+- wildlife_viewing (synonyms: animals, bird watching, orangutan, monkeys, safari)
+- cultural_performance (synonyms: dance, music, show, cultural show, traditional)
+- gaming_zone (synonyms: arcade, gaming, video games, esports)
+=== ENTITY: duration ===
+Type: Pattern Entity
+Purpose: Extracts number of days from user input
+Pattern: \b(\d+)\s*(day|days|night|nights)\b
+=== ENTITY: group_size ===
+Type: Pattern Entity
+Purpose: Extracts number of people from user input
+Pattern: \b(\d+)\s*(people|person|pax|adults|adult)\b
+=== ENTITY: price_amount ===
+Type: Pattern Entity
+Purpose: Extracts price amounts from user input
+Pattern: \b(RM|rm|MYR)?\s?(\d+)\b
+Title: INTENTS: User Intent Categories for Malaysia Travel
+Content:
+=== INTENT: airport_transfer ===
+Purpose: User asks about transportation from airport to city
+User Says Examples:
+- How do I get from the airport to the city?
+- What's the cheapest way from KLIA to KL Sentral?
+- Airport taxi cost
+- KLIA Ekspres schedule
+- Grab from airport
+- I need wheelchair accessible transport from airport
+- Transfer options from Penang airport
+- How to get from Langkawi airport to Cenang Beach?
+- Bus from KLIA to city center
+- Private chauffeur from airport
+=== INTENT: find_accommodation ===
+Purpose: User asks about hotels or places to stay
+User Says Examples:
+- Find me a hotel in Kuala Lumpur
+- Budget accommodation in Penang
+- Hotels with pool and parking
+- I need wheelchair accessible hotel
+- Best rated hotels in Langkawi
+- Family friendly accommodation in Malacca
+- Where to stay in Bukit Bintang?
+- Cheap hostel in George Town
+- Luxury resort in Langkawi
+- Hotels near KLCC
+=== INTENT: attraction_recommendation ===
+Purpose: User asks about tourist attractions and things to do
+User Says Examples:
+- What to do in Penang?
+- Cultural tourism places in Malaysia
+- Best hiking spots near Kuala Lumpur
+- Water activities in Langkawi
+- Accessible attractions in KL
+- Escape rooms in Malaysia
+- Theme parks for family
+- Where to see wildlife in Sabah?
+- Heritage sites in Malacca
+- Things to do in Cameron Highlands
+=== INTENT: food_recommendation ===
+Purpose: User asks about restaurants and food
+User Says Examples:
+- Best nasi lemak in KL
+- Where to eat in Penang?
+- Crazy Ozzy coffee shops
+- Halal restaurants in Kuala Lumpur
+- Seafood in Langkawi
+- Vegetarian food Malaysia
+- Budget food under RM20
+- Famous street food in Penang
+- Best roti canai in KL
+- Fine dining in Kuala Lumpur
+=== INTENT: transport_during_stay ===
+Purpose: User asks about getting around within cities
+User Says Examples:
+- How to get around Kuala Lumpur?
+- Public transport in Penang
+- MRT routes to Batu Caves
+- Grab taxi cost
+- Car rental in Langkawi
+- Wheelchair accessible transport
+- Train from KL to Penang
+- Bus system in George Town
+- How to travel between cities?
+- Best way to explore Langkawi
+=== INTENT: itinerary_plan ===
+Purpose: User asks for travel planning and itineraries
+User Says Examples:
+- Plan my 5 day Malaysia trip
+- 3 day itinerary for KL
+- One week Malaysia travel plan
+- Accessible itinerary for wheelchair user
+- Family itinerary with kids
+- What to do in 10 days?
+- Best route for 7 days in West Malaysia
+- How to cover KL, Penang, Langkawi?
+- East Malaysia travel plan
+- Budget itinerary for 5 days
+Title: FRAMES: Malaysia Accommodation Database
+Content:
+=== FRAME DEFINITION: Accommodation ===
+Purpose: Structured data for hotels and accommodations
+Slots: name, property_type, state, area, price_per_night_myr, budget_category, star_rating, customer_rating, total_reviews, amenities, accessibility_features, distance_to_city_center_km, family_friendly, halal_certified, contact_number
+=== FRAME INSTANCE 1 ===
+name: "Berjaya Times Square Hotel"
+property_type: "hotel"
+state: "Kuala Lumpur"
+area: "Bukit Bintang"
+price_per_night_myr: 180
+budget_category: "mid_100_300"
+star_rating: 4
+customer_rating: 4.2
+total_reviews: 8234
+amenities: ["free_parking", "wifi", "pool", "air_conditioning", "gym", "restaurant", "24hr_front_desk"]
+accessibility_features: ["wheelchair_accessible_rooms", "accessible_bathroom", "elevator"]
+distance_to_city_center_km: 0
+family_friendly: true
+halal_certified: true
+contact_number: "+603-2117 8000"
+=== FRAME INSTANCE 2 ===
+name: "The RuMa Hotel"
+property_type: "hotel"
+state: "Kuala Lumpur"
+area: "Bukit Bintang"
+price_per_night_myr: 500
+budget_category: "premium_300_600"
+star_rating: 5
+customer_rating: 4.7
+total_reviews: 3421
+amenities: ["wifi", "pool", "air_conditioning", "gym", "restaurant", "spa", "24hr_front_desk"]
+accessibility_features: ["wheelchair_accessible_rooms", "accessible_bathroom", "elevator", "visual_alarms"]
+distance_to_city_center_km: 0.2
+family_friendly: true
+halal_certified: true
+contact_number: "+603-2778 0888"
+=== FRAME INSTANCE 3 ===
+name: "The 23 Pod Hostel"
+property_type: "hostel"
+state: "Kuala Lumpur"
+area: "Bukit Bintang"
+price_per_night_myr: 55
+budget_category: "budget_under100"
+star_rating: 3
+customer_rating: 4.4
+total_reviews: 2156
+amenities: ["wifi", "air_conditioning"]
+accessibility_features: ["elevator"]
+distance_to_city_center_km: 0.3
+family_friendly: false
+halal_certified: true
+contact_number: "+603-2110 1888"
+=== FRAME INSTANCE 4 ===
+name: "Eastern & Oriental Hotel"
+property_type: "hotel"
+state: "Penang"
+area: "George Town"
+price_per_night_myr: 550
+budget_category: "premium_300_600"
+star_rating: 5
+customer_rating: 4.6
+total_reviews: 4123
+amenities: ["free_parking", "wifi", "pool", "air_conditioning", "gym", "restaurant", "spa", "24hr_front_desk"]
+accessibility_features: ["wheelchair_accessible_rooms", "elevator"]
+distance_to_city_center_km: 0.5
+family_friendly: true
+halal_certified: true
+contact_number: "+604-222 2000"
+=== FRAME INSTANCE 5 ===
+name: "The Datai Langkawi"
+property_type: "resort"
+state: "Langkawi"
+area: "Datai Bay"
+price_per_night_myr: 1200
+budget_category: "luxury_above600"
+star_rating: 5
+customer_rating: 4.8
+total_reviews: 1892
+amenities: ["free_parking", "wifi", "pool", "air_conditioning", "gym", "restaurant", "spa", "24hr_front_desk"]
+accessibility_features: ["wheelchair_accessible_rooms", "accessible_bathroom", "elevator"]
+distance_to_city_center_km: 12
+family_friendly: true
+halal_certified: true
+contact_number: "+604-950 8888"
+=== FRAME INSTANCE 6 ===
+name: "Cenang Plaza Beach Hotel"
+property_type: "hotel"
+state: "Langkawi"
+area: "Cenang Beach"
+price_per_night_myr: 85
+budget_category: "budget_under100"
+star_rating: 3
+customer_rating: 4.1
+total_reviews: 1567
+amenities: ["wifi", "air_conditioning", "restaurant"]
+accessibility_features: []
+distance_to_city_center_km: 0
+family_friendly: true
+halal_certified: true
+contact_number: "+604-955 8181"
+=== FRAME INSTANCE 7 ===
+name: "Bayview Hotel Georgetown"
+property_type: "hotel"
+state: "Penang"
+area: "George Town"
+price_per_night_myr: 180
+budget_category: "mid_100_300"
+star_rating: 4
+customer_rating: 4.0
+total_reviews: 3421
+amenities: ["free_parking", "wifi", "pool", "air_conditioning", "gym", "restaurant"]
+accessibility_features: ["wheelchair_accessible_rooms", "elevator"]
+distance_to_city_center_km: 0.2
+family_friendly: true
+halal_certified: true
+contact_number: "+604-263 3161"
+Title: FRAMES: Malaysia Tourist Attractions Database
+Content:
+=== FRAME DEFINITION: TouristAttraction ===
+Purpose: Structured data for tourist attractions
+Slots: name, state, district, attraction_type, activities, ticket_price_myr, price_category, opening_hours, recommended_duration_hours, accessibility_rating, accessibility_details, kid_friendly, best_time_to_visit
+=== FRAME INSTANCE 1 ===
+name: "Petronas Twin Towers"
+state: "Kuala Lumpur"
+district: "KLCC"
+attraction_type: "modern"
+activities: ["photography", "shopping", "museum_visit"]
+ticket_price_myr: 80
+price_category: "premium_above80"
+opening_hours: "9:00 AM - 9:00 PM"
+recommended_duration_hours: 2
+accessibility_rating: "excellent"
+accessibility_details: "Wheelchair accessible with elevators and ramps throughout"
+kid_friendly: true
+best_time_to_visit: "Morning (9-11am) for less crowds"
+=== FRAME INSTANCE 2 ===
+name: "Batu Caves"
+state: "Kuala Lumpur"
+district: "Gombak"
+attraction_type: "religious"
+activities: ["hiking", "photography"]
+ticket_price_myr: 0
+price_category: "free"
+opening_hours: "6:00 AM - 9:00 PM"
+recommended_duration_hours: 2
+accessibility_rating: "fair"
+accessibility_details: "272 steps to main cave, wheelchair accessible only to lower caves"
+kid_friendly: true
+best_time_to_visit: "Morning (7-9am) to avoid heat and monkeys"
+=== FRAME INSTANCE 3 ===
+name: "George Town Heritage Zone"
+state: "Penang"
+district: "George Town"
+attraction_type: "cultural"
+activities: ["photography", "shopping", "cultural_performance", "museum_visit"]
+ticket_price_myr: 0
+price_category: "free"
+opening_hours: "24 hours"
+recommended_duration_hours: 4
+accessibility_rating: "fair"
+accessibility_details: "Narrow streets, some uneven paths. Main roads are accessible"
+kid_friendly: true
+best_time_to_visit: "Morning (8-11am) or late afternoon (4-7pm)"
+=== FRAME INSTANCE 4 ===
+name: "Kek Lok Si Temple"
+state: "Penang"
+district: "Air Itam"
+attraction_type: "religious"
+activities: ["photography", "cultural_performance"]
+ticket_price_myr: 0
+price_category: "free"
+opening_hours: "8:30 AM - 5:30 PM"
+recommended_duration_hours: 2
+accessibility_rating: "good"
+accessibility_details: "Inclinator available, paved paths"
+kid_friendly: true
+best_time_to_visit: "Morning (8-11am) before crowds"
+=== FRAME INSTANCE 5 ===
+name: "Langkawi Sky Bridge"
+state: "Langkawi"
+district: "Oriental Village"
+attraction_type: "adventure"
+activities: ["photography", "hiking"]
+ticket_price_myr: 85
+price_category: "premium_above80"
+opening_hours: "9:30 AM - 7:00 PM"
+recommended_duration_hours: 2
+accessibility_rating: "fair"
+accessibility_details: "Accessible via cable car, bridge has some slopes"
+kid_friendly: true
+best_time_to_visit: "Morning (9-11am) for clear views"
+=== FRAME INSTANCE 6 ===
+name: "Cenang Beach"
+state: "Langkawi"
+district: "Pantai Cenang"
+attraction_type: "nature"
+activities: ["water_sports", "photography", "swimming"]
+ticket_price_myr: 0
+price_category: "free"
+opening_hours: "24 hours"
+recommended_duration_hours: 4
+accessibility_rating: "good"
+accessibility_details: "Beach access points, some areas have ramps"
+kid_friendly: true
+best_time_to_visit: "Morning or late afternoon to avoid midday heat"
+=== FRAME INSTANCE 7 ===
+name: "Islamic Arts Museum"
+state: "Kuala Lumpur"
+district: "KL Sentral"
+attraction_type: "cultural"
+activities: ["museum_visit", "photography"]
+ticket_price_myr: 20
+price_category: "budget_under30"
+opening_hours: "10:00 AM - 6:00 PM"
+recommended_duration_hours: 2
+accessibility_rating: "excellent"
+accessibility_details: "Ramps, wide spaces, elevators throughout"
+kid_friendly: true
+best_time_to_visit: "Afternoon (1-4pm) for air-conditioned comfort"
+=== FRAME INSTANCE 8 ===
+name: "Sunway Lagoon"
+state: "Selangor"
+district: "Bandar Sunway"
+attraction_type: "entertainment"
+activities: ["water_sports", "theme_park", "photography"]
+ticket_price_myr: 180
+price_category: "premium_above80"
+opening_hours: "10:00 AM - 6:00 PM"
+recommended_duration_hours: 6
+accessibility_rating: "good"
+accessibility_details: "Wheelchair accessible, some rides have restrictions"
+kid_friendly: true
+best_time_to_visit: "Weekdays to avoid crowds"
+=== FRAME INSTANCE 9 ===
+name: "Escape Penang"
+state: "Penang"
+district: "Teluk Bahang"
+attraction_type: "adventure"
+activities: ["theme_park", "hiking", "water_sports"]
+ticket_price_myr: 150
+price_category: "premium_above80"
+opening_hours: "10:00 AM - 6:00 PM"
+recommended_duration_hours: 6
+accessibility_rating: "good"
+accessibility_details: "Some areas accessible, inquire at guest services"
+kid_friendly: true
+best_time_to_visit: "Weekdays, arrive early for zip line"
+=== FRAME INSTANCE 10 ===
+name: "Kinabatangan River"
+state: "Sabah"
+district: "Sandakan"
+attraction_type: "nature"
+activities: ["wildlife_viewing", "photography"]
+ticket_price_myr: 300
+price_category: "premium_above80"
+opening_hours: "Boat tours at 6am and 4pm"
+recommended_duration_hours: 4
+accessibility_rating: "fair"
+accessibility_details: "Boat accessible, limited walking required"
+kid_friendly: true
+best_time_to_visit: "March-October, early morning for wildlife"
+Title: FRAMES: Malaysia Dining Venues Database
+Content:
+=== FRAME DEFINITION: DiningVenue ===
+Purpose: Structured data for restaurants and food venues
+Slots: name, state, area, cuisine_type, price_per_person_myr, budget_category, customer_rating, signature_dishes, atmosphere, service_quality_rating, opening_hours, halal_certified, crazy_ozzy_coffee_available
+=== FRAME INSTANCE 1 ===
+name: "Village Park Restaurant"
+state: "Kuala Lumpur"
+area: "Damansara Utama"
+cuisine_type: "malay"
+price_per_person_myr: 15
+budget_category: "budget_under20"
+customer_rating: 4.7
+signature_dishes: ["Nasi Lemak Ayam Goreng", "Rendang"]
+atmosphere: "casual"
+service_quality_rating: 4.5
+opening_hours: "7:00 AM - 7:00 PM"
+halal_certified: true
+crazy_ozzy_coffee_available: false
+=== FRAME INSTANCE 2 ===
+name: "VCR"
+state: "Kuala Lumpur"
+area: "Chinatown"
+cuisine_type: "western"
+price_per_person_myr: 30
+budget_category: "mid_20_50"
+customer_rating: 4.6
+signature_dishes: ["Flat White", "Avocado Toast", "Sourdough"]
+atmosphere: "trendy"
+service_quality_rating: 4.5
+opening_hours: "8:30 AM - 10:00 PM"
+halal_certified: false
+crazy_ozzy_coffee_available: true
+=== FRAME INSTANCE 3 ===
+name: "Gurney Drive Hawker Centre"
+state: "Penang"
+area: "George Town"
+cuisine_type: "malay, chinese, indian, seafood"
+price_per_person_myr: 12
+budget_category: "budget_under20"
+customer_rating: 4.4
+signature_dishes: ["Char Kuey Teow", "Asam Laksa", "Hokkien Mee"]
+atmosphere: "casual"
+service_quality_rating: 4.0
+opening_hours: "5:00 PM - 11:00 PM"
+halal_certified: false
+crazy_ozzy_coffee_available: false
+=== FRAME INSTANCE 4 ===
+name: "Wonderland Food Store"
+state: "Langkawi"
+area: "Kuah"
+cuisine_type: "seafood"
+price_per_person_myr: 35
+budget_category: "mid_20_50"
+customer_rating: 4.5
+signature_dishes: ["Butter Prawns", "Chili Crab", "Steamed Fish"]
+atmosphere: "casual"
+service_quality_rating: 4.3
+opening_hours: "5:00 PM - 10:30 PM"
+halal_certified: true
+crazy_ozzy_coffee_available: false
+=== FRAME INSTANCE 5 ===
+name: "Pulp by Papa Palheta"
+state: "Kuala Lumpur"
+area: "Bangsar"
+cuisine_type: "western"
+price_per_person_myr: 35
+budget_category: "mid_20_50"
+customer_rating: 4.5
+signature_dishes: ["Pour Over Coffee", "Pastries"]
+atmosphere: "trendy"
+service_quality_rating: 4.5
+opening_hours: "9:00 AM - 6:00 PM"
+halal_certified: false
+crazy_ozzy_coffee_available: true
+=== FRAME INSTANCE 6 ===
+name: "Jalan Alor Food Street"
+state: "Kuala Lumpur"
+area: "Bukit Bintang"
+cuisine_type: "malay, chinese, seafood"
+price_per_person_myr: 20
+budget_category: "budget_under20"
+customer_rating: 4.3
+signature_dishes: ["Satay", "Grilled Seafood", "Durian"]
+atmosphere: "casual"
+service_quality_rating: 4.0
+opening_hours: "5:00 PM - 2:00 AM"
+halal_certified: false
+crazy_ozzy_coffee_available: false
+=== FRAME INSTANCE 7 ===
+name: "Nasi Kandar Line Clear"
+state: "Penang"
+area: "George Town"
+cuisine_type: "indian"
+price_per_person_myr: 15
+budget_category: "budget_under20"
+customer_rating: 4.5
+signature_dishes: ["Nasi Kandar", "Ayam Goreng"]
+atmosphere: "casual"
+service_quality_rating: 4.2
+opening_hours: "24 hours"
+halal_certified: true
+crazy_ozzy_coffee_available: false
+=== FRAME INSTANCE 8 ===
+name: "The Mugshot Cafe"
+state: "Penang"
+area: "George Town"
+cuisine_type: "western"
+price_per_person_myr: 25
+budget_category: "mid_20_50"
+customer_rating: 4.4
+signature_dishes: ["Bagels", "Yogurt", "Coffee"]
+atmosphere: "trendy"
+service_quality_rating: 4.3
+opening_hours: "8:00 AM - 9:00 PM"
+halal_certified: false
+crazy_ozzy_coffee_available: true
+Title: SEMANTIC NETWORK: Malaysia Travel Relationships
+Content:
+=== MALAYSIA DESTINATION NETWORK ===
+[KUALA LUMPUR] (Capital City)
+├── located_in → Malaysia
+├── has_attraction → Petronas Twin Towers
+├── has_attraction → Batu Caves
+├── has_attraction → KL Tower
+├── has_attraction → Central Market
+├── has_attraction → Islamic Arts Museum
+├── has_attraction → Jalan Alor Food Street
+├── has_attraction → Merdeka Square
+├── has_transport → MRT Sungai Buloh-Kajang Line
+├── has_transport → LRT Kelana Jaya Line
+├── has_transport → Monorail
+├── has_transport → Grab
+├── has_airport → Kuala Lumpur International Airport (KUL)
+├── has_airport → Sultan Abdul Aziz Shah Airport (SZB)
+├── accessibility_rating → Good
+└── recommended_duration → 3-5 days
+[PENANG]
+├── located_in → Malaysia
+├── capital → George Town
+├── unesco_status → World Heritage Site
+├── has_attraction → George Town Heritage Zone
+├── has_attraction → Kek Lok Si Temple
+├── has_attraction → Penang Hill
+├── has_attraction → Escape Penang
+├── has_attraction → Entopia Butterfly Farm
+├── has_food → Char Kuey Teow
+├── has_food → Asam Laksa
+├── has_food → Nasi Kandar
+├── has_food → Cendol
+├── has_transport → Rapid Penang Bus
+├── has_transport → Grab
+├── has_airport → Penang International Airport (PEN)
+└── recommended_duration → 2-4 days
+[LANGKAWI]
+├── located_in → Malaysia
+├── state → Kedah
+├── has_attraction → Langkawi Sky Bridge
+├── has_attraction → Cenang Beach
+├── has_attraction → Kilim Karst Geoforest Park
+├── has_attraction → Pulau Payar Marine Park
+├── has_attraction → Underwater World Langkawi
+├── has_activity → Water Sports
+├── has_activity → Mangrove Tour
+├── has_activity → Island Hopping
+├── has_transport → Car Rental
+├── has_transport → Scooter Rental
+├── has_transport → Grab
+├── has_airport → Langkawi International Airport (LGK)
+└── recommended_duration → 2-3 days
+[PETRONAS TWIN TOWERS]
+├── located_in → Kuala Lumpur
+├── area → KLCC
+├── attraction_type → Landmark
+├── height → 452 meters
+├── floors → 88
+├── has_feature → Skybridge
+├── has_feature → Observation Deck
+├── connected_to → Suria KLCC Mall
+├── nearby → KLCC Park
+├── nearby → Aquaria KLCC
+├── transport → LRT KLCC Station
+├── transport → MRT KLCC Station
+├── ticket_price → RM80 (adult)
+├── accessibility → Excellent
+├── best_time → Morning
+└── instagram_worthy → Yes
+[CHAR KUEY TEOW]
+├── cuisine → Chinese
+├── famous_in → Penang
+├── main_ingredients → flat_rice_noodles, prawns, cockles, egg, bean_sprouts
+├── best_places → Gurney Drive Hawker Centre
+├── best_places → Siam Road Char Kuey Teow
+├── price_range → RM8-15
+├── best_time → Dinner
+├── halal → Non-halal
+└── vegetarian_option → Available
+[JALAN ALOR]
+├── located_in → Kuala Lumpur
+├── area → Bukit Bintang
+├── type → Food Street
+├── operation_hours → Evening to Late Night (5pm-2am)
+├── famous_for → Satay
+├── famous_for → Grilled Seafood
+├── famous_for → Durian
+├── famous_for → Local Malaysian Food
+├── budget → Under RM20 per person
+├── accessibility → Fair (busy, crowded)
+├── nearby → Bukit Bintang Monorail Station
+├── halal_options → Available
+└── crazy_ozzy_coffee_nearby → Yes
+=== TRANSPORT NETWORK ===
+[KLIA EKSPRES TRAIN]
+├── from → Kuala Lumpur International Airport (KUL)
+├── to → KL Sentral
+├── travel_time → 28 minutes
+├── frequency → Every 15-20 minutes
+├── cost → RM55
+├── accessibility → Wheelchair accessible
+├── connects_to → MRT
+├── connects_to → LRT
+├── connects_to → Monorail
+├── best_for → Solo travelers
+├── best_for → Business travelers
+└── best_for → Time-sensitive travelers
+[GRAB]
+├── type → Ride-hailing App
+├── available_in → All major Malaysian cities
+├── payment → Cash, Credit Card, E-wallet
+├── vehicle_types → GrabCar (standard)
+├── vehicle_types → GrabPlus (wheelchair accessible)
+├── vehicle_types → GrabCar Premium (luxury)
+├── vehicle_types → GrabCar 6-Seater (groups)
+├── cost → RM5-150 depending on distance
+├── accessibility → GrabPlus available for wheelchair users
+├── best_for → Door-to-door convenience
+└── best_for → Groups
+[MRT SUNGAI BULOH-KAJANG LINE]
+├── type → Mass Rapid Transit
+├── city → Kuala Lumpur
+├── stations → 31 stations
+├── key_stations → Muzium Negara (National Museum)
+├── key_stations → Pasar Seni (Central Market)
+├── key_stations → Merdeka (Merdeka Square)
+├── key_stations → Bukit Bintang (Shopping district)
+├── operating_hours → 6:00 AM - 12:00 AM
+├── frequency → 5-10 minutes
+├── cost → RM1-6 per trip
+├── tourist_pass → MyCity Pass (RM25 for 3 days)
+├── accessibility → Excellent
+└── payment → Touch 'n Go, Credit Card
+Title: LOGICAL REPRESENTATION: Malaysia Travel Facts and Decision Rules
+Content:
+=== LOGICAL FACTS ===
+Fact 1: Malaysia is a country in Southeast Asia with 13 states and 3 federal territories.
+Fact 2: The official language is Malay, but English is widely spoken.
+Fact 3: The currency is Malaysian Ringgit (MYR).
+Fact 4: Tourist visas are required for stays exceeding 90 days.
+Fact 5: The climate is tropical with temperatures between 25-35°C year-round.
+Fact 6: Malaysia has two main seasons: dry season (March-October) and wet season (November-February).
+=== LOGICAL RULES FOR AIRPORT TRANSFER ===
+Rule AT1: IF arrival_airport = "KUL" AND budget = "budget" AND group_size <= 2 AND luggage = "light" THEN recommended_transfer = "KLIA Ekspres Train" AND cost = 55 AND duration = "28 minutes" AND reason = "Most time-efficient budget option"
+Rule AT2: IF arrival_airport = "KUL" AND budget = "budget" AND group_size >= 3 THEN recommended_transfer = "Airport Bus" AND cost = 15 AND duration = "75 minutes" AND reason = "Best value for groups with luggage"
+Rule AT3: IF arrival_airport = "KUL" AND (budget = "premium" OR group_size >= 4) THEN recommended_transfer = "Private Chauffeur" AND cost = 150 AND duration = "45-60 minutes" AND reason = "Door-to-door service with luggage space"
+Rule AT4: IF accessibility_required = true AND mobility_device = "wheelchair" THEN recommended_transfer = "Private Chauffeur with accessible vehicle" AND booking_required = true AND reason = "Only guaranteed accessible option"
+Rule AT5: IF arrival_airport = "PEN" AND budget = "budget" AND destination = "George Town" THEN recommended_transfer = "Rapid Penang Bus 401/401E" AND cost = 3.50 AND duration = "45-60 minutes"
+=== LOGICAL RULES FOR ACCOMMODATION ===
+Rule ACC1: IF budget_category = "budget_under100" AND traveler_type = "solo" AND city = "Kuala Lumpur" THEN accommodation_type = "hostel" AND recommended_areas = ["Bukit Bintang", "Chinatown"] AND price_range = "RM35-80"
+Rule ACC2: IF budget_category = "mid_100_300" AND family_friendly = true AND amenities_required CONTAINS ["pool", "free_parking"] THEN accommodation_type = "3_or_4_star_hotel" AND recommended_areas = ["Bukit Bintang", "KLCC"] AND price_range = "RM120-280"
+Rule ACC3: IF accessibility_required = true AND wheelchair_user = true THEN mandatory_features = ["elevator", "wheelchair_accessible_rooms", "accessible_bathroom"] AND filter = "properties_with_all_features"
+Rule ACC4: IF customer_rating >= 4.5 AND total_reviews >= 2000 AND price_per_night_myr <= user_budget THEN priority = "highly_recommended" AND badge = "Travelers_Choice"
+=== LOGICAL RULES FOR ATTRACTIONS ===
+Rule ATT1: IF interest = "cultural_tourism
+Rule ATT1: IF interest = "cultural_tourism" AND state = "Penang" THEN recommended_attractions = ["George Town Heritage Zone", "Kek Lok Si Temple", "Cheong Fatt Tze Mansion", "Pinang Peranakan Mansion"] AND cultural_significance = "high" AND recommended_duration = "2-3 days"
+Rule ATT2: IF interest = "cultural_tourism" AND state = "Kuala Lumpur" THEN recommended_attractions = ["Batu Caves", "Islamic Arts Museum", "Central Market", "Thean Hou Temple"] AND cultural_significance = "high"
+Rule ATT3: IF interest = "adventure" AND activity = "hiking" AND difficulty = "easy_to_moderate" THEN recommended_attractions = ["Broga Hill", "Bukit Gasing", "Crystal Hill", "Penang Hill trails"] AND time_required = "2-4 hours" AND best_time = "Morning (before 8am)"
+Rule ATT4: IF interest = "adventure" AND activity = "water_sports" AND state = "Langkawi" THEN recommended_attractions = ["Cenang Beach", "Pulau Payar Marine Park", "Kilim Karst Geoforest Park"] AND activities_available = ["snorkeling", "jet_ski", "parasailing", "kayaking", "mangrove_tour"]
+Rule ATT5: IF interest = "sustainable_travel" AND eco_preference = "high" THEN recommended_attractions = ["Royal Belum State Park", "Taman Negara", "Bako National Park", "Kinabatangan River", "Cameron Highlands Organic Farms"] AND activities = ["nature_conservation", "wildlife_watching", "rainforest_hiking", "community_ecotourism"]
+Rule ATT6: IF accessibility_required = true AND wheelchair_user = true THEN accessible_attractions = ["KLCC Park", "Aquaria KLCC", "Islamic Arts Museum", "Penang Botanic Gardens", "The Mines Mall"] AND accessibility_notes = "All locations have paved paths, ramps, and accessible restrooms"
+Rule ATT7: IF interest = "adventure" AND activity = "escape_room" AND state = "Kuala Lumpur" THEN recommended_venues = ["Escape Room Malaysia @ Paradigm Mall", "LOST in KL @ Bukit Bintang", "Breakout @ Nu Sentral"] AND price_range = "RM45-80" AND duration = "1 hour"
+Rule ATT8: IF interest = "adventure" AND activity = "theme_park" AND state = "Selangor" THEN recommended_parks = ["Sunway Lagoon", "Genting Highlands Theme Park"] AND ticket_price = "RM151-180" AND best_time = "Weekdays to avoid crowds"
+Rule ATT9: IF interest = "gaming_zones" AND state = "Kuala Lumpur" THEN recommended_venues = ["Genting Highlands (Casino + Arcade)", "Timezone @ Pavilion KL", "Battle Archer @ MyTOWN"] AND activities = ["arcade_games", "archery_tag", "casino"]
+=== LOGICAL RULES FOR DINING ===
+Rule DIN1: IF cuisine_preference = "local_malaysian" AND budget_category = "budget_under20" AND state = "Kuala Lumpur" THEN recommended_venues = ["Jalan Alor Food Street", "Central Market Food Court", "Lot 10 Hutong"] AND price_per_meal = "RM5-20" AND must_try = ["Nasi Lemak", "Satay", "Char Kuey Teow"]
+Rule DIN2: IF crazy_ozzy_coffee = true AND budget_category = "mid_20_50" AND atmosphere_preference = "trendy" AND state = "Kuala Lumpur" THEN recommended_cafes = ["VCR", "Pulp", "Mason", "Kafe Kleptokrat", "Antipodean"] AND features = ["specialty_coffee", "instagrammable_interior", "brunch_menu"]
+Rule DIN3: IF crazy_ozzy_coffee = true AND state = "Penang" THEN recommended_cafes = ["The Mugshot Cafe", "Mews Cafe", "Wheeler's"] AND signature_items = ["bagels", "yogurt", "specialty_coffee"]
+Rule DIN4: IF dietary_restriction = "halal" AND cuisine_preference = "any" THEN filter = "halal_certified_venues" AND recommended_areas = ["Jalan Alor KL (many halal options)", "Seksyen 17 PJ", "Changlun Street Penang"] AND verification = "Look for halal certification logo"
+Rule DIN5: IF cuisine_preference = "seafood" AND state = "Langkawi" THEN recommended_venues = ["Wonderland Food Store", "The Roof Restaurant"] AND specialties = ["butter_prawns", "chili_crab", "steamed_fish"] AND best_time = "Dinner"
+Rule DIN6: IF cuisine_preference = "indian" AND budget_category = "budget_under20" AND state = "Kuala Lumpur" THEN recommended_venues = ["Sri Paandi (Brickfields)", "Devi's Corner (Bangsar)"] AND must_try = ["Banana Leaf Rice", "Roti Canai", "Fish Curry"]
+Rule DIN7: IF cuisine_preference = "chinese" AND state = "Penang" THEN recommended_venues = ["Gurney Drive Hawker Centre", "Siam Road Char Kuey Teow"] AND must_try = ["Char Kuey Teow", "Hokkien Mee", "Wan Tan Mee"]
+Rule DIN8: IF dietary_restriction = "vegetarian" AND state = "Kuala Lumpur" THEN recommended_venues = ["Woods Vegan", "Ganga Cafe", "Simple Life"] AND cuisines_available = ["Indian", "Western", "Asian Fusion"]
+=== LOGICAL RULES FOR TRANSPORT ===
+Rule TRN1: IF city = "Kuala Lumpur" AND budget = "budget" AND mobility = "fully_ambulant" THEN primary_transport = "MRT/LRT/Monorail" AND tourist_pass = "MyCity Pass RM25 for 3 days" AND cost_per_trip = "RM1-6"
+Rule TRN2: IF city = "Kuala Lumpur" AND budget = "mid_range" AND convenience_priority = "high" THEN primary_transport = "Grab" AND cost_per_trip = "RM5-30" AND waiting_time = "5-10 minutes"
+Rule TRN3: IF city = "Penang" AND budget = "budget" AND location = "George Town" THEN primary_transport = "Rapid Penang Bus" AND free_option = "CAT Free Shuttle in heritage zone" AND cost_per_trip = "RM1.40-4"
+Rule TRN4: IF city = "Langkawi" AND group_size >= 2 THEN primary_transport = "Car Rental" AND cost = "RM60-150 per day" AND requirements = "Valid driving license, drive on left"
+Rule TRN5: IF city = "Langkawi" AND group_size = 1 AND budget = "budget" THEN primary_transport = "Scooter Rental" AND cost = "RM30-50 per day"
+Rule TRN6: IF accessibility_required = true AND wheelchair_user = true AND city = "Kuala Lumpur" THEN accessible_transport = ["MRT Sungai Buloh-Kajang Line", "GrabPlus", "Rapid KL Bus (low floor)"] AND notes = "All MRT stations have elevators"
+Rule TRN7: IF multi_state_travel = true AND duration >= 5 THEN intercity_transport = ["Domestic Flights", "ETS Train", "Private Chauffeur"] AND flight_cost = "RM80-150" AND train_cost = "RM60-120"
+=== LOGICAL RULES FOR ITINERARY PLANNING ===
+Rule IT1: IF duration_days = 1 AND arrival_city = "Kuala Lumpur" THEN itinerary_type = "KL_Highlights" AND recommended_attractions = ["Petronas Twin Towers", "KL Tower", "Merdeka Square", "Central Market"] AND transport = "Grab or MRT" AND accommodation_required = false
+Rule IT2: IF duration_days = 3 AND travel_style = "cultural" THEN itinerary_structure = { day1: "Kuala Lumpur - Islamic Arts Museum, Central Market, Thean Hou Temple", day2: "Kuala Lumpur - Batu Caves, National Museum, Bukit Bintang", day3: "Malacca Day Trip - Jonker Street, A Famosa, River Cruise" }
+Rule IT3: IF duration_days = 5 AND travel_style = "balanced" THEN itinerary_structure = { days_1_2: "Kuala Lumpur - city exploration", day_3: "Travel to Penang", days_4_5: "Penang - George Town, Kek Lok Si, Penang Hill" } AND transport_between = "Domestic flight or bus"
+Rule IT4: IF duration_days = 7 AND travel_style = "comprehensive" THEN itinerary_structure = { days_1_2: "Kuala Lumpur", days_3_4: "Penang", days_5_6: "Langkawi", day_7: "Departure" } AND transport_between = "Domestic flights"
+Rule IT5: IF duration_days >= 10 AND travel_style = "explorer" AND include_east_malaysia = true THEN itinerary_structure = { days_1_3: "Kuala Lumpur", days_4_6: "Penang", days_7_8: "Sabah (Kota Kinabalu)", days_9_10: "Sarawak (Kuching)" } AND notes = "Book domestic flights in advance, Sabah/Sarawak require separate immigration entry"
+Rule IT6: IF accessibility_required = true AND wheelchair_user = true AND duration_days = 3 THEN itinerary_structure = { day1: "KLCC Park, Petronas Twin Towers, Suria KLCC Mall", day2: "Islamic Arts Museum, National Museum, Central Market", day3: "Aquaria KLCC, Pavilion Mall, departure" } AND transport = "MRT + GrabPlus"
+Rule IT7: IF duration_days BETWEEN 4 AND 5 AND travel_style = "budget" THEN daily_budget = "RM100-150 per person" AND accommodation_type = "hostel_or_budget_hotel" AND food = "hawker_centers_and_local_eateries" AND transport = "public_transport"
+Title: PRODUCTION RULES: Malaysia Travel Decision Engine
+Content:
+=== PRODUCTION RULES - AIRPORT TRANSFER ===
+PR-AT-001:
+IF user_arrives_at == "KUL" AND user_budget == "budget" AND user_group_size <= 2 AND user_luggage == "light"
+THEN RECOMMEND "KLIA Ekspres Train"
+WITH details {
+cost: "RM55",
+duration: "28 minutes",
+next_step: "From KL Sentral, take MRT/LRT to hotel",
+booking: "Purchase at airport counter or online"
+}
+PR-AT-002:
+IF user_arrives_at == "KUL" AND user_budget == "budget" AND (user_group_size >= 3 OR user_luggage == "heavy")
+THEN RECOMMEND "Airport Bus"
+WITH details {
+cost: "RM15 per person",
+duration: "75 minutes",
+next_step: "Alight at KL Sentral, then connect to local transport",
+operator: "Airport Coach or Star Shuttle"
+}
+PR-AT-003:
+IF user_arrives_at == "KUL" AND (user_budget == "mid_range" OR user_budget == "premium") AND user_group_size <= 3
+THEN RECOMMEND "Grab"
+WITH details {
+cost: "RM65-90",
+duration: "45-60 minutes",
+next_step: "Download Grab app, follow signs to ride-hailing pickup area",
+payment: "Cash or credit card"
+}
+PR-AT-004:
+IF user_arrives_at == "KUL" AND (user_budget == "premium" OR user_group_size >= 4) AND user_convenience_priority == "high"
+THEN RECOMMEND "Private Chauffeur"
+WITH details {
+cost: "RM150-200",
+duration: "45-60 minutes",
+benefits: "Door-to-door, luggage space, flexible stops",
+booking: "Pre-book via travel agent or airport counter"
+}
+PR-AT-005:
+IF user_accessibility_required == true AND user_mobility_device == "wheelchair"
+THEN RECOMMEND "Private Chauffeur with Accessible Vehicle"
+WITH details {
+cost: "RM150-200",
+booking: "Must pre-book 24 hours in advance",
+provider: "Tourism Malaysia accessible transport or GrabPlus",
+contact: "+603-8891 3000"
+}
+PR-AT-006:
+IF user_arrives_at == "PEN" AND user_budget == "budget" AND user_destination == "George Town"
+THEN RECOMMEND "Rapid Penang Bus 401 or 401E"
+WITH details {
+cost: "RM3.50",
+duration: "45-60 minutes",
+route: "Airport to George Town via Jalan Sultan Azlan Shah",
+alternative: "Grab (RM20-30)"
+}
+PR-AT-007:
+IF user_arrives_at == "LGK" AND user_budget == "budget" AND user_group_size <= 2
+THEN RECOMMEND "Airport Taxi"
+WITH details {
+cost: "RM30 to Cenang Beach, RM25 to Kuah",
+duration: "20-30 minutes",
+note: "Buy coupon at airport taxi counter"
+}
+PR-AT-008:
+IF user_arrives_at == "LGK" AND user_budget == "mid_range" AND user_plans_to_explore == true
+THEN RECOMMEND "Car Rental"
+WITH details {
+cost: "RM60-150 per day",
+benefits: "Best way to explore Langkawi",
+requirement: "Valid driving license"
+}
+=== PRODUCTION RULES - ACCOMMODATION ===
+PR-ACC-001:
+IF user_city == "Kuala Lumpur" AND user_budget_category == "budget_under100" AND user_traveler_type == "solo"
+THEN RECOMMEND hostels IN ["The 23 Pod Hostel", "Step Inn Hostel", "Ryokan Chinatown"]
+WITH details {
+price_range: "RM35-80",
+areas: "Bukit Bintang, Chinatown",
+amenities: "wifi, air conditioning",
+note: "Budget hostels offer social atmosphere but limited privacy"
+}
+PR-ACC-002:
+IF user_city == "Kuala Lumpur" AND user_budget_category == "mid_100_300" AND user_amenities CONTAINS ["pool", "free_parking", "wifi"]
+THEN RECOMMEND hotels IN ["Berjaya Times Square Hotel", "Swiss-Garden Hotel", "Furama Bukit Bintang"]
+WITH details {
+price_range: "RM120-280",
+areas: "Bukit Bintang, KLCC",
+amenities: "all requested amenities available",
+rating: "4.0+ stars"
+}
+PR-ACC-003:
+IF user_city == "Kuala Lumpur" AND user_budget_category == "premium_300_600" AND user_occasion == "romantic"
+THEN RECOMMEND hotels IN ["The RuMa Hotel", "W Kuala Lumpur"]
+WITH details {
+price_range: "RM400-600",
+features: "luxury design, rooftop pool, city views",
+special: "Romantic packages available"
+}
+PR-ACC-004:
+IF user_city == "Penang" AND user_budget_category == "mid_100_300" AND user_family_friendly == true
+THEN RECOMMEND hotels IN ["Bayview Hotel Georgetown", "Hotel Jen Penang", "G Hotel Kelawai"]
+WITH details {
+price_range: "RM150-280",
+areas: "George Town, Gurney Drive",
+family_features: "family rooms, pool, kids menu",
+nearby: "Gurney Drive Hawker Centre, Botanical Gardens"
+}
+PR-ACC-005:
+IF user_city == "Langkawi" AND user_budget_category == "budget_under100" AND user_transport == "no_car"
+THEN RECOMMEND hotels IN ["Cenang Plaza Beach Hotel", "Boxpackers Hostel"]
+WITH details {
+price_range: "RM60-90",
+area: "Cenang Beach (walkable)",
+nearby: "Beach, restaurants, tour operators",
+note: "Centrally located for walking access"
+}
+PR-ACC-006:
+IF user_city == "Langkawi" AND user_budget_category == "premium_300_600" AND user_occasion == "honeymoon"
+THEN RECOMMEND resorts IN ["The Datai Langkawi", "Four Seasons Resort Langkawi"]
+WITH details {
+price_range: "RM800-1500",
+features: "private beaches, luxury spa, fine dining",
+special: "Honeymoon packages available",
+booking: "Book 3 months in advance for best rates"
+}
+PR-ACC-007:
+IF user_accessibility_required == true AND user_wheelchair == true AND user_city == "Kuala Lumpur"
+THEN RECOMMEND hotels IN ["Berjaya Times Square Hotel", "Hilton Kuala Lumpur", "The RuMa Hotel"]
+WITH details {
+features: "wheelchair accessible rooms, roll-in showers, elevators",
+verification: "Contact hotel to confirm specific accessibility arrangements",
+note: "All 4-5 star hotels have accessible options"
+}
+=== PRODUCTION RULES - ATTRACTIONS ===
+PR-ATT-001:
+IF user_interest == "cultural_tourism" AND user_state == "Kuala Lumpur"
+THEN RECOMMEND attractions IN [
+"Islamic Arts Museum - World-class Islamic art, RM20, 2-3 hours, wheelchair accessible",
+"Batu Caves - Hindu temple with 272 steps, free, 2-3 hours, NOT wheelchair accessible",
+"Central Market - Heritage crafts, free, 1-2 hours, accessible",
+"Thean Hou Temple - Chinese temple, free, 1 hour, accessible"
+]
+WITH itinerary {
+morning: "Batu Caves (arrive before 9am)",
+afternoon: "Islamic Arts Museum + National Museum",
+evening: "Central Market for souvenirs"
+}
+PR-ATT-002:
+IF user_interest == "cultural_tourism" AND user_state == "Penang"
+THEN RECOMMEND attractions IN [
+"George Town Heritage Zone - UNESCO site, free, 3-4 hours",
+"Kek Lok Si Temple - Largest Buddhist temple, free, 2-3 hours",
+"Cheong Fatt Tze Mansion - The Blue Mansion, RM25, 45 min",
+"Pinang Peranakan Mansion - Heritage museum, RM20, 1-2 hours"
+]
+PR-ATT-003:
+IF user_interest == "adventure" AND user_activity == "hiking" AND user_difficulty == "easy"
+THEN RECOMMEND trails IN [
+"Broga Hill, Selangor - 45 min hike, sunrise view, RM5",
+"Bukit Gasing, KL - 1-2 hours, easy trails, free",
+"Penang Hill Trail - 1-2 hours, from Botanical Gardens, free"
+]
+WITH details {
+best_time: "Early morning (5-7am)",
+preparation: "Wear proper shoes, bring water, insect repellent"
+}
+PR-ATT-004:
+IF user_interest == "adventure" AND user_activity == "water_sports" AND user_state == "Langkawi"
+THEN RECOMMEND activities IN [
+"Pulau Payar Marine Park - Snorkeling with sharks, RM200, full day",
+"Cenang Beach - Jet ski, parasailing, RM50-150",
+"Kilim Karst Geoforest Park - Mangrove kayaking, RM150-200, 3-4 hours"
+]
+PR-ATT-005:
+IF user_interest == "sustainable_travel" AND user_eco_preference == "high"
+THEN RECOMMEND destinations IN [
+"Taman Negara National Park - Oldest rainforest",
+"Royal Belum State Park - Pristine forest, endangered species",
+"Kinabatangan River, Sabah - Wildlife conservation",
+"Bako National Park, Sarawak - Biodiversity hotspot"
+]
+WITH details {
+best_time: "March-October (dry season)",
+accommodation: "Choose eco-certified lodges",
+practices: "Support local communities, minimize waste"
+}
+PR-ATT-006:
+IF user_accessibility_required == true AND user_wheelchair == true AND user_state == "Kuala Lumpur"
+THEN RECOMMEND attractions IN [
+"KLCC Park - Paved paths, accessible restrooms, free",
+"Aquaria KLCC - Flat walkways, wheelchair available, RM69",
+"Islamic Arts Museum - Ramps, wide spaces, elevators, RM20",
+"Pavilion Kuala Lumpur - Shopping mall, fully accessible",
+"National Museum - Ramps, elevators, RM5"
+]
+WITH details {
+transport: "MRT stations have elevators, GrabPlus for accessible ride-hailing",
+note: "Call ahead to confirm specific accessibility arrangements"
+}
+PR-ATT-007:
+IF user_interest == "adventure" AND user_activity == "escape_room" AND user_state == "Kuala Lumpur"
+THEN RECOMMEND venues IN [
+"Escape Room Malaysia @ Paradigm Mall - RM50-80, 1 hour",
+"LOST in KL @ Bukit Bintang - RM45-70, 1 hour",
+"Breakout @ Nu Sentral - RM48-68, 1 hour, 4.5 star rating"
+]
+PR-ATT-008:
+IF user_interest == "adventure" AND user_activity == "theme_park" AND user_state == "Selangor"
+THEN RECOMMEND parks IN [
+"Sunway Lagoon - Water park + amusement park, RM180, full day",
+"Genting Highlands Theme Park - SkyWorlds, RM151, full day"
+]
+WITH details {
+best_time: "Weekdays to avoid crowds",
+booking: "Buy tickets online for 10-20% discount"
+}
+PR-ATT-009:
+IF user_interest == "gaming_zones" AND user_state == "Kuala Lumpur"
+THEN RECOMMEND venues IN [
+"Genting Highlands - Casino + Arcade + Theme Park",
+"Timezone @ Pavilion KL - Arcade games, RM20-100",
+"Battle Archer @ MyTOWN - Archery tag game, RM35 per game"
+]
+=== PRODUCTION RULES - DINING ===
+PR-DIN-001:
+IF user_cuisine == "local_malaysian" AND user_budget == "budget_under20" AND user_state == "Kuala Lumpur"
+THEN RECOMMEND venues IN [
+"Jalan Alor Food Street - Satay, seafood, durian, open 5pm-2am",
+"Central Market Food Court - Laksa, nasi lemak, open 10am-8pm",
+"Lot 10 Hutong - Curated hawker stalls, open 10am-10pm"
+]
+WITH must_try: ["Nasi Lemak", "Satay", "Char Kuey Teow", "Cendol"]
+PR-DIN-002:
+IF user_crazy_ozzy_coffee == true AND user_atmosphere == "trendy" AND user_state == "Kuala Lumpur"
+THEN RECOMMEND cafes IN [
+"VCR, Chinatown - Flat white, avocado toast, open 8:30am-10pm",
+"Pulp, Bangsar - Pour over coffee, open 9am-6pm",
+"Mason, Chow Kit - Sourdough, specialty coffee, open 8am-6pm",
+"Kafe Kleptokrat, Bangsar - All-day breakfast, open 9am-9pm",
+"Antipodean, Bangsar - Big breakfast, open 8am-10pm"
+]
+WITH details {
+price_range: "RM20-50",
+features: "instagrammable interior, specialty coffee",
+interior_rating: "4.5+ stars"
+}
+PR-DIN-003:
+IF user_crazy_ozzy_coffee == true AND user_state == "Penang"
+THEN RECOMMEND cafes IN [
+"The Mugshot Cafe - Bagels, yogurt, open 8am-9pm",
+"Mews Cafe - Coffee, cakes, heritage building",
+"Wheeler's - Coffee, pastries, bicycle-themed"
+]
+PR-DIN-004:
+IF user_cuisine == "seafood" AND user_state == "Langkawi"
+THEN RECOMMEND restaurants IN [
+"Wonderland Food Store, Kuah - Butter prawns, chili crab, open 5pm-10:30pm, RM20-50",
+"The Roof Restaurant, Cenang - Grilled fish, sunset view, RM30-70"
+]
+WITH must_try: ["Butter Prawns", "Chili Crab", "Steamed Fish"]
+PR-DIN-005:
+IF user_cuisine == "indian" AND user_budget == "budget_under20" AND user_state == "Kuala Lumpur"
+THEN RECOMMEND venues IN [
+"Sri Paandi, Brickfields - Banana leaf rice, RM10-20",
+"Devi's Corner, Bangsar - Roti canai, 24 hours, RM5-15"
+]
+WITH must_try: ["Banana Leaf Rice", "Roti Canai", "Fish Curry"]
+PR-DIN-006:
+IF user_cuisine == "chinese" AND user_state == "Penang"
+THEN RECOMMEND venues IN [
+"Gurney Drive Hawker Centre - Char Kuey Teow, Hokkien Mee, open 5pm-11pm",
+"Siam Road Char Kuey Teow - Famous CKT, open 3pm-9pm, cash only"
+]
+PR-DIN-007:
+IF user_dietary == "halal" AND user_cuisine == "any"
+THEN RECOMMEND areas: ["Jalan Alor KL (many halal options)", "Seksyen 17 PJ", "Changlun Street Penang"]
+WITH note: "Look for halal certification logo at restaurant entrance"
+PR-DIN-008:
+IF user_dietary == "vegetarian" AND user_state == "Kuala Lumpur"
+THEN RECOMMEND venues IN [
+"Woods Vegan, Bukit Bintang - Modern vegan, RM20-40",
+"Ganga Cafe, Bangsar - Indian vegetarian, RM15-30",
+"Simple Life - Healthy vegetarian chain, RM10-20, multiple locations"
+]
+=== PRODUCTION RULES - TRANSPORT DURING STAY ===
+PR-TRN-001:
+IF user_city == "Kuala Lumpur" AND user_budget == "budget" AND user_mobility == "fully_ambulant"
+THEN RECOMMEND transport: ["MRT Sungai Buloh-Kajang Line", "LRT Kelana Jaya Line", "Monorail", "Rapid KL Bus"]
+WITH details {
+tourist_pass: "MyCity Pass RM25 for 3 days unlimited",
+cost_per_trip: "RM1-6",
+operating_hours: "6:00 AM - 12:00 AM"
+}
+PR-TRN-002:
+IF user_city == "Kuala Lumpur" AND user_budget == "mid_range" AND user_convenience_priority == "high"
+THEN RECOMMEND transport: "Grab"
+WITH details {
+cost: "RM5-30 per trip",
+waiting_time: "5-10 minutes",
+benefits: "Door-to-door, air-conditioned"
+}
+PR-TRN-003:
+IF user_city == "Penang" AND user_budget == "budget" AND user_location == "George Town"
+THEN RECOMMEND transport: ["Rapid Penang Bus", "CAT Free Shuttle"]
+WITH details {
+cost: "RM1.40-4 per bus trip",
+free_option: "CAT Free Shuttle in heritage zone, 6am-11pm",
+tourist_pass: "Rapid Penang Tourist Pass RM30 for 3 days"
+}
+PR-TRN-004:
+IF user_city == "Langkawi" AND user_group_size >= 2
+THEN RECOMMEND transport: "Car Rental"
+WITH details {
+cost: "RM60-150 per day",
+benefits: "Most flexible way to explore island",
+requirement: "Valid driving license, drive on left"
+}
+PR-TRN-005:
+IF user_city == "Langkawi" AND user_group_size == 1 AND user_budget == "budget"
+THEN RECOMMEND transport: "Scooter Rental"
+WITH details {
+cost: "RM30-50 per day",
+requirement: "Helmet required, valid license"
+}
+PR-TRN-006:
+IF user_accessibility_required == true AND user_wheelchair == true AND user_city == "Kuala Lumpur"
+THEN RECOMMEND transport: ["MRT Sungai Buloh-Kajang Line", "GrabPlus", "Rapid KL Bus (low floor)"]
+WITH details {
+mrt_note: "All stations have elevators and tactile paving",
+grab_note: "Book GrabPlus for wheelchair-accessible vehicles",
+bus_note: "Look for low floor buses with ramps"
+}
+PR-TRN-007:
+IF user_multi_state_travel == true AND user_duration >= 5
+THEN RECOMMEND intercity_transport: ["Domestic Flights", "ETS Train", "Private Chauffeur"]
+WITH details {
+flight_cost: "RM80-150 between major cities",
+train_cost: "RM60-120 KL to Penang (3.5 hours)",
+chauffeur_cost: "RM400-600 per day for groups of 4+"
+}
+=== PRODUCTION RULES - ITINERARY PLANNING ===
+PR-IT-001:
+IF user_duration == 1 AND user_arrival_city == "Kuala Lumpur"
+THEN GENERATE itinerary {
+title: "Kuala Lumpur Express - 1 Day Highlights",
+morning: "Petronas Twin Towers (arrive 8:30am for Skybridge tickets)",
+afternoon: "Batu Caves (12pm-2pm) + Islamic Arts Museum (2:30pm-4:30pm)",
+evening: "Jalan Alor Food Street for dinner (6pm onwards)",
+cost: "RM150-250 per person"
+}
+PR-IT-002:
+IF user_duration == 3 AND user_travel_style == "cultural"
+THEN GENERATE itinerary {
+title: "Cultural Explorer - 3 Days",
+day1: "Kuala Lumpur - Islamic Arts Museum, Central Market, Thean Hou Temple",
+day2: "Kuala Lumpur - Batu Caves, National Museum, Bukit Bintang",
+day3: "Malacca Day Trip - Jonker Street, A Famosa, River Cruise",
+cost: "RM800-1200 per person"
+}
+PR-IT-003:
+IF user_duration BETWEEN 5 AND 7 AND user_travel_style == "balanced"
+THEN GENERATE itinerary {
+title: "Malaysia Highlights - 5 to 7 Days",
+days_1_2: "Kuala Lumpur - Petronas Towers, Batu Caves, shopping",
+day_3: "Travel to Penang (flight 1 hour)",
+days_4_5: "Penang - George Town, Kek Lok Si, Penang Hill",
+days_6_7: "Langkawi - Sky Bridge, Cenang Beach, mangrove tour",
+cost: "RM2000-3000 per person"
+}
+PR-IT-004:
+IF user_duration >= 10 AND user_travel_style == "comprehensive"
+THEN GENERATE itinerary {
+title: "Complete Malaysia Explorer - 10+ Days",
+days_1_3: "Kuala Lumpur - all major attractions",
+days_4_6: "Penang - heritage, food, hill station",
+days_7_8: "Langkawi - beaches, water activities",
+days_9_10: "East Malaysia - Sabah or Sarawak for nature",
+cost: "RM4000-6000 per person",
+notes: "East Malaysia requires additional planning"
+}
+PR-IT-005:
+IF user_accessibility_required == true AND user_wheelchair == true AND user_duration == 3
+THEN GENERATE itinerary {
+title: "Accessible Kuala Lumpur - 3 Days",
+day1: "KLCC Park (paved paths), Petronas Twin Towers (accessible), Suria KLCC Mall",
+day2: "Islamic Arts Museum, National Museum, Central Market (all accessible)",
+day3: "Aquaria KLCC, Pavilion Mall, departure",
+transport: "MRT (all stations have elevators) + GrabPlus",
+cost: "RM1000-1500 per person"
+}
+PR-IT-006:
+IF user_duration BETWEEN 4 AND 5 AND user_travel_style == "budget"
+THEN GENERATE itinerary {
+title: "Budget Malaysia - 4 to 5 Days",
+days_1_3: "Kuala Lumpur - hostels, hawker food, public transport",
+days_4_5: "Penang - budget hotels, street food, free attractions",
+daily_budget: "RM100-150 per person",
+accommodation: "hostels or budget hotels",
+food: "hawker centers and local eateries",
+transport: "public buses, MRT/LRT"
+}
+Title: AIRPORT TRANSFER: Complete Guide for All Major Airports
+Content:
+=== KUALA LUMPUR INTERNATIONAL AIRPORT (KUL) ===
+1. KLIA Ekspres Train
+- Cost: RM55 per adult
+- Duration: 28 minutes to KL Sentral
+- Operating Hours: 4:30 AM to 12:30 AM
+- Frequency: Every 15-20 minutes
+- Accessibility: Wheelchair accessible with staff assistance
+- Best for: Solo travelers, business travelers, time-sensitive trips
+- Next Step: From KL Sentral, connect to MRT/LRT/monorail to hotel
+2. KLIA Transit Train
+- Cost: RM55 to KL Sentral (stops at Bandar Tasik Selatan, Putrajaya)
+- Duration: 35-40 minutes
+- Operating Hours: 4:30 AM to 12:30 AM
+- Best for: Those with destinations at intermediate stations
+3. Airport Bus (Airport Coach / Star Shuttle)
+- Cost: RM15 per person
+- Duration: 60-75 minutes to KL Sentral
+- Operating Hours: 5:00 AM to 12:00 AM
+- Frequency: Every 30-60 minutes
+- Best for: Budget travelers, groups with luggage
+4. Grab (Ride-hailing)
+- Cost: RM65-90 to KL city center
+- Duration: 45-60 minutes
+- Operating Hours: 24/7
+- Accessibility: GrabPlus for wheelchair vehicles
+- Best for: Groups, families, convenience
+5. Airport Taxi (Coupon Taxi)
+- Cost: RM80-120 to KL city center
+- Duration: 45-60 minutes
+- Operating Hours: 24/7
+- Best for: First-time visitors, official service preference
+6. Private Chauffeur
+- Cost: RM150-200 per vehicle
+- Duration: 45-60 minutes
+- Accessibility: Can arrange accessible vehicles
+- Best for: Groups of 4+, premium experience
+=== PENANG INTERNATIONAL AIRPORT (PEN) ===
+1. Rapid Penang Bus (401 or 401E)
+- Cost: RM3.50
+- Duration: 45-60 minutes to George Town
+- Operating Hours: 5:30 AM - 11:00 PM
+- Best for: Budget travelers
+2. Grab
+- Cost: RM20-30 to George Town
+- Duration: 30-40 minutes
+- Operating Hours: 24/7
+- Best for: Convenience, groups
+3. Airport Taxi
+- Cost: RM30-40 to George Town (coupon system)
+- Duration: 30-40 minutes
+- Best for: First-time visitors
+=== LANGKAWI INTERNATIONAL AIRPORT (LGK) ===
+1. Airport Taxi
+- Cost: RM30 to Cenang Beach, RM25 to Kuah
+- Duration: 20-30 minutes
+- Coupon system at airport counter
+2. Grab
+- Cost
+2. Grab
+- Cost: RM15-30 depending on destination
+- Duration: 20-30 minutes
+- Availability: Limited during late hours
+- Best for: Budget-conscious travelers
+3. Car Rental
+- Cost: RM60-150 per day
+- Best for: Those planning to explore the island
+- Major rental companies: Avis, Hertz, Kasina, local operators
+- Requirement: Valid driving license
+=== JOHOR BAHRU SENAI INTERNATIONAL AIRPORT (JHB) ===
+1. Causeway Link Bus (AA1)
+- Cost: RM8
+- Duration: 45 minutes to JB Sentral
+- Operating Hours: 6:00 AM - 10:00 PM
+- Best for: Budget travelers
+2. Grab
+- Cost: RM25-40 to JB city center
+- Duration: 30-40 minutes
+- Best for: Convenience
+3. Airport Taxi
+- Cost: RM40-50 to JB city center
+- Duration: 30-40 minutes
+- Coupon system available
+=== KOTA KINABALU INTERNATIONAL AIRPORT (BKI) ===
+1. Grab
+- Cost: RM10-20 to Kota Kinabalu city center
+- Duration: 15-20 minutes
+- Best for: Most travelers
+2. Airport Bus
+- Cost: RM5
+- Duration: 30 minutes to city center
+- Operating Hours: 6:00 AM - 10:00 PM
+3. Airport Taxi
+- Cost: RM30-40 to city center
+- Duration: 15-20 minutes
+- Coupon system at airport counter
+=== KUCHING INTERNATIONAL AIRPORT (KCH) ===
+1. Grab
+- Cost: RM15-25 to Kuching city center
+- Duration: 15-20 minutes
+- Best for: Most travelers
+2. Airport Bus (Kuching Metro)
+- Cost: RM5
+- Duration: 30 minutes to city center
+- Operating Hours: 6:00 AM - 9:00 PM
+3. Airport Taxi
+- Cost: RM30-35 to city center
+- Duration: 15-20 minutes
+- Coupon system available
+Title: ITINERARIES: Complete Malaysia Travel Plans by Duration
+Content:
+=== 1-DAY ITINERARY: KUALA LUMPUR EXPRESS ===
+Perfect for layover or short stay.
+Morning (9:00 AM - 12:00 PM):
+- Petronas Twin Towers (KLCC)
+* Arrive at 8:30 AM for Skybridge tickets
+* Ticket price: RM80 for foreign adult
+* Observation deck on 86th floor
+* Transport: LRT to KLCC Station
+Lunch (12:00 PM - 2:00 PM):
+- Suria KLCC food court OR Madam Kwan's
+* Try: Nasi Lemak, Laksa, Roti Canai
+* Budget: RM20-40 per person
+Afternoon (2:00 PM - 5:00 PM):
+- Merdeka Square (Dataran Merdeka)
+- Sultan Abdul Samad Building (photo stop)
+- Central Market (souvenir shopping)
+- Transport: LRT to Masjid Jamek Station
+Evening (5:00 PM - 8:00 PM):
+- Jalan Alor Food Street for dinner
+* Try: Satay, Grilled Seafood, Durian
+* Budget: RM15-30 per person
+- Bukit Bintang shopping area
+- Transport: Monorail to Bukit Bintang Station
+Estimated Total Cost: RM150-250 per person
+Accessibility: MRT/LRT stations accessible, Jalan Alor has uneven paths
+=== 3-DAY ITINERARY: KUALA LUMPUR + MALACCA ===
+Day 1: Kuala Lumpur City
+Morning (9:00 AM - 12:00 PM):
+- Batu Caves (272 steps to temple)
+* Free entry, arrive before 9am to avoid crowds
+* Transport: KTM Komuter to Batu Caves Station
+Afternoon (1:00 PM - 5:00 PM):
+- Islamic Arts Museum (RM20, wheelchair accessible)
+- National Mosque (free, closed during prayer times)
+- KL Railway Station (photo stop)
+Evening (6:00 PM onwards):
+- KL Tower observation deck (RM50)
+- Dinner at Jalan Alor
+Day 2: Malacca Day Trip
+Morning (7:00 AM - 9:00 AM):
+- Travel from KL to Malacca
+* Bus from TBS (Terminal Bersepadu Selatan)
+* Duration: 2 hours, Cost: RM15
+* First bus at 7:00 AM
+Late Morning (10:00 AM - 1:00 PM):
+- Jonker Street (free)
+- St Paul's Hill (free)
+- A Famosa Fort (free)
+- Transport: Walking distance
+Afternoon (1:00 PM - 5:00 PM):
+- Lunch at Jonker Street (Bibik Heritage, Nancy's Kitchen)
+- Melaka River Cruise (RM25, 45 minutes)
+- The Shore Sky Tower (optional, RM35)
+Evening (6:00 PM onwards):
+- Jonker Street Night Market (weekends only)
+- Return to KL (last bus 8:00 PM)
+Day 3: KL Shopping & Departure
+Morning (9:00 AM - 1:00 PM):
+- Pavilion KL or Suria KLCC for shopping
+- Last minute souvenir purchases
+Afternoon:
+- Transfer to airport (allow 1.5-2 hours)
+Estimated Total Cost: RM600-900 per person
+Accommodation: Stay in Bukit Bintang or KLCC area
+=== 5-DAY ITINERARY: WEST MALAYSIA HIGHLIGHTS ===
+Day 1: Arrival in Kuala Lumpur
+- Transfer from airport to hotel
+- Evening: Bukit Bintang exploration, Jalan Alor dinner
+- Accommodation: Bukit Bintang or KLCC area
+Day 2: Kuala Lumpur City Exploration
+Morning:
+- Petronas Twin Towers (book tickets in advance online)
+- KLCC Park
+Afternoon:
+- Islamic Arts Museum
+- National Museum (RM5)
+- Central Market
+Evening:
+- KL Tower for sunset views
+- Dinner at local restaurant
+Day 3: Travel to Penang
+Morning:
+- Flight KL to Penang (1 hour, RM80-150)
+- OR ETS Train (3.5 hours, RM60-120)
+Afternoon:
+- Check in to George Town hotel
+- George Town heritage walk
+- Street art photography
+- Cheong Fatt Tze Mansion tour (RM25)
+Evening:
+- Gurney Drive Hawker Centre for dinner
+* Try: Char Kuey Teow, Asam Laksa, Hokkien Mee
+Day 4: Penang Exploration
+Morning:
+- Kek Lok Si Temple (free, inclinator RM6)
+- Penang Hill (RM30 for funicular)
+Afternoon:
+- Pinang Peranakan Mansion (RM20)
+- Armenian Street (street art)
+- Blue Mansion exterior photo
+Evening:
+- Chulia Street Night Food Market
+- Try: Nasi Kandar Line Clear (24 hours)
+Day 5: Depart from Penang
+Morning:
+- Last minute souvenir shopping
+- Transfer to Penang International Airport
+Estimated Total Cost: RM1,800-2,500 per person
+Transportation: Domestic flight or train between cities
+=== 7-DAY ITINERARY: COMPREHENSIVE WEST MALAYSIA ===
+Day 1-2: Kuala Lumpur
+Day 1:
+- Petronas Twin Towers + KLCC
+- Bukit Bintang shopping
+- Jalan Alor dinner
+Day 2:
+- Batu Caves (morning)
+- Islamic Arts Museum + National Museum
+- Central Market + Chinatown
+- KL Tower evening
+Day 3-4: Penang
+Day 3:
+- Flight KL to Penang (1 hour)
+- George Town heritage walk
+- Street art + clan jetties
+- Cheong Fatt Tze Mansion
+Day 4:
+- Kek Lok Si Temple
+- Penang Hill + The Habitat
+- Botanical Gardens
+- Gurney Drive dinner
+Day 5-6: Langkawi
+Day 5:
+- Flight Penang to Langkawi (30 min)
+- Car rental (recommended)
+- Cenang Beach
+- Sky Bridge + Cable Car
+Day 6:
+- Pulau Payar Marine Park (snorkeling)
+- OR Kilim Karst Geoforest Park (mangrove tour)
+- Sunset at Cenang Beach
+Day 7: Departure
+- Last minute shopping
+- Transfer to Langkawi International Airport
+Estimated Total Cost: RM2,500-3,500 per person
+Transportation: Domestic flights + car rental in Langkawi
+=== 10-DAY ITINERARY: COMPLETE MALAYSIA EXPLORER ===
+Day 1-3: Kuala Lumpur
+Day 1:
+- Arrival, city orientation, Bukit Bintang
+Day 2:
+- Petronas Twin Towers, KLCC Park, Aquaria KLCC
+- Evening at Jalan Alor
+Day 3:
+- Batu Caves, Islamic Arts Museum, Central Market
+- Optional: Genting Highlands day trip
+Day 4-6: Penang
+Day 4:
+- Travel to Penang (flight or train)
+- George Town heritage exploration
+Day 5:
+- Kek Lok Si Temple, Penang Hill
+- Penang National Park or Escape Penang
+Day 6:
+- Balik Pulau (rural Penang)
+- Durian farms, paddy fields
+- Evening: Gurney Drive dinner
+Day 7-8: Langkawi
+Day 7:
+- Flight to Langkawi
+- Sky Bridge, Cable Car
+- Cenang Beach
+Day 8:
+- Island hopping (Dayang Bunting, Beras Basah)
+- OR Pulau Payar snorkeling
+- Evening: Wonderland Food Store dinner
+Day 9-10: East Malaysia Option (Sabah)
+Day 9:
+- Flight Langkawi to Kota Kinabalu (via KL)
+- Kota Kinabalu city tour
+- Sunset at Tanjung Aru Beach
+Day 10:
+- Kinabalu Park + Poring Hot Springs
+- OR Mari-Mari Cultural Village
+- Departure
+Estimated Total Cost: RM4,000-5,500 per person
+Notes: East Malaysia requires additional planning, separate immigration entry
+=== 14-DAY ITINERARY: ULTIMATE MALAYSIA ADVENTURE ===
+Week 1: West Malaysia
+Days 1-3: Kuala Lumpur
+- Complete city exploration
+- Batu Caves, Islamic Arts Museum, KL Tower
+- Shopping at Pavilion, Suria KLCC
+Days 4-6: Penang
+- George Town UNESCO heritage
+- Kek Lok Si, Penang Hill, Botanical Gardens
+- Full food trail experience
+Days 7-9: Langkawi
+- Sky Bridge, mangrove tour, island hopping
+- Beach relaxation, water sports
+Days 10-11: Malacca
+- Travel from Langkawi to Malacca
+- Jonker Street, A Famosa, river cruise
+- Baba-Nyonya heritage
+Week 2: East Malaysia (Sabah & Sarawak)
+Days 12-13: Sabah (Kota Kinabalu)
+- Kinabalu Park, Poring Hot Springs
+- Mari-Mari Cultural Village
+- Tunku Abdul Rahman Marine Park
+Days 14-15: Sarawak (Kuching)
+- Bako National Park (proboscis monkeys)
+- Semenggoh Orangutan Centre
+- Kuching waterfront
+- Departure from Kuching
+Estimated Total Cost: RM6,000-8,500 per person
+Best Time: March-October (dry season)
+Note: Sabah/Sarawak require separate immigration entry upon arrival
+Title: ACCESSIBILITY GUIDE: Malaysia for Travelers with Disabilities
+Content:
+=== ACCESSIBLE TRANSPORT ===
+Kuala Lumpur:
+- MRT Sungai Buloh-Kajang Line: All 31 stations have elevators, tactile paving, and wheelchair spaces
+- LRT Kelana Jaya Line: Select stations have elevators, check station map
+- Monorail: Limited accessibility (stairs at some stations)
+- Rapid KL Bus: Low floor buses available on select routes
+- GrabPlus: Wheelchair-accessible vehicles via Grab app (additional RM10-20)
+- KLIA Ekspres: Wheelchair accessible with staff assistance
+Penang:
+- Rapid Penang Bus: Some low floor buses, call ahead to confirm
+- CAT Free Shuttle: Limited accessibility
+- Grab: Available, call driver to confirm accessibility needs
+Langkawi:
+- Car Rental: Can arrange with hand controls (advance booking required)
+- Grab: Limited availability
+- Private Tours: Many operators offer accessible tour packages
+=== ACCESSIBLE ATTRACTIONS ===
+Kuala Lumpur:
+1. KLCC Park - Paved paths, accessible restrooms, free
+2. Petronas Twin Towers - Elevators, ramps, accessible restrooms
+3. Aquaria KLCC - Flat walkways, wheelchair available for rent
+4. Islamic Arts Museum - Ramps, wide spaces, elevators throughout
+5. National Museum - Ramps, elevators, accessible restrooms
+6. Pavilion Kuala Lumpur - Fully accessible shopping mall
+7. Suria KLCC - Fully accessible shopping mall
+8. Sunway Lagoon - Accessible rides, wheelchair rental available
+Penang:
+1. Penang Botanic Gardens - Paved paths, benches throughout
+2. Kek Lok Si Temple - Inclinator available, some stairs
+3. Gurney Drive Hawker Centre - Ground level, wide walkways
+4. Penang Hill - New funicular trains with wheelchair spaces
+5. Entopia Butterfly Farm - Paved paths, accessible throughout
+Langkawi:
+1. Langkawi Sky Bridge - Accessible via cable car, bridge has slopes
+2. Cenang Beach - Beach access points, some with ramps
+3. Underwater World Langkawi - Flat walkways, accessible
+4. Kilim Karst Geoforest Park - Boat tours accessible with assistance
+=== ACCESSIBLE ACCOMMODATION ===
+Kuala Lumpur:
+- Berjaya Times Square Hotel: Accessible rooms with roll-in showers
+- Hilton Kuala Lumpur: Excellent accessibility throughout
+- The RuMa Hotel: Wheelchair accessible rooms, elevators
+- W Kuala Lumpur: Accessible rooms, pool lift
+Penang:
+- G Hotel Kelawai: Accessible rooms available
+- Bayview Hotel Georgetown: Wheelchair accessible
+- Eastern & Oriental Hotel: Accessible rooms, ramps
+Langkawi:
+- The Datai Langkawi: Accessible villa options
+- Four Seasons Resort Langkawi: Accessible rooms with beach access
+=== ACCESSIBLE ITINERARY - 3 DAYS ===
+Day 1: KLCC Area
+- KLCC Park (paved paths, accessible restrooms)
+- Petronas Twin Towers (book accessible tickets in advance)
+- Suria KLCC Mall (fully accessible)
+- Lunch: Madam Kwan's (accessible)
+- Evening: KL Tower (accessible observation deck)
+Day 2: Cultural Quarter
+- Islamic Arts Museum (ramps, wide spaces)
+- National Museum (accessible)
+- Central Market (accessible entrance)
+- Transport: MRT (all stations have elevators)
+- Lunch: Lot 10 Hutong (accessible food court)
+Day 3: Nature & Departure
+- Aquaria KLCC (flat walkways)
+- Perdana Botanical Gardens (accessible pathways)
+- Lunch: Pavilion Mall (fully accessible)
+- Transfer to airport: KLIA Ekspres (accessible) or GrabPlus
+=== IMPORTANT ACCESSIBILITY NOTES ===
+1. MRT is the most accessible public transport in Kuala Lumpur
+2. Always call accommodation ahead to confirm specific accessibility needs
+3. Book GrabPlus in advance for accessible ride-hailing
+4. Most 4-5 star hotels have accessible rooms
+5. Heritage sites (George Town, Malacca) have cobblestone streets
+6. Batu Caves has 272 steps - not wheelchair accessible to main cave
+7. Carry a doctor's letter for medication if needed
+8. Tourism Malaysia provides accessible travel information at their offices
+=== CONTACT INFORMATION ===
+- Tourism Malaysia Accessible Travel: +603-8891 3000
+- Grab Customer Support: Via app
+- MRT Customer Service: +603-7885 2585
+- Malaysia Airlines Special Assistance: +603-7843 3000
+Title: CRAZY OZZY COFFEE: Trendy Cafes in Malaysia
+Content:
+=== WHAT IS CRAZY OZZY COFFEE ===
+"Crazy Ozzy" refers to trendy, Instagram-worthy coffee shops with specialty coffee, beautiful interior design, and excellent brunch menus. These cafes are popular among young travelers and coffee enthusiasts.
+=== KUALA LUMPUR - TOP CRAZY OZZY CAFES ===
+1. VCR
+Location: 2, Jalan Galloway, Chinatown
+Opening Hours: 8:30 AM - 10:00 PM
+Price Range: RM20-40 per person
+Signature Items: Flat White, Avocado Toast, Sourdough
+Interior: Industrial chic with exposed brick and concrete
+Rating: 4.6/5
+Must Know: One of KL's original specialty coffee pioneers
+2. Pulp by Papa Palheta
+Location: 29-01, Jalan Riong, Bangsar
+Opening Hours: 9:00 AM - 6:00 PM
+Price Range: RM20-40 per person
+Signature Items: Pour Over Coffee, Pastries
+Interior: Minimalist, bright, coffee-focused
+Rating: 4.5/5
+Must Know: Coffee connoisseur's paradise, imported beans
+3. Mason
+Location: 6, Jalan Kencana, Chow Kit
+Opening Hours: 8:00 AM - 6:00 PM
+Price Range: RM25-45 per person
+Signature Items: Sourdough Toast, Specialty Coffee, Pastries
+Interior: Minimalist design with natural light
+Rating: 4.6/5
+Must Know: Excellent pastries, quiet workspace vibe
+4. Kafe Kleptokrat
+Location: 37, Jalan SS 21/56, Damansara Utama
+Opening Hours: 9:00 AM - 9:00 PM
+Price Range: RM20-40 per person
+Signature Items: All-day Breakfast, Coffee
+Interior: Artistic space with murals
+Rating: 4.4/5
+Must Know: Artsy atmosphere, popular for brunch
+5. Antipodean
+Location: 20, Jalan Telawi 2, Bangsar
+Opening Hours: 8:00 AM - 10:00 PM
+Price Range: RM25-50 per person
+Signature Items: Big Breakfast, Eggs Benedict
+Interior: Australian-style cafe
+Rating: 4.5/5
+Must Know: KL institution, consistently good
+6. Three Years Old
+Location: 2, Jalan Sin Chew Kee, Chow Kit
+Opening Hours: 9:00 AM - 5:00 PM
+Price Range: RM20-35 per person
+Signature Items: Coffee, Cakes
+Interior: Hidden gem, cozy
+Rating: 4.5/5
+Must Know: Small space, arrive early
+7. LOKL Coffee Co.
+Location: 30, Jalan Tun H S Lee, Chinatown
+Opening Hours: 8:00 AM - 6:00 PM
+Price Range: RM15-30 per person
+Signature Items: Breakfast Bowls, Coffee
+Interior: Heritage building, relaxed vibe
+Rating: 4.4/5
+Must Know: Fusion of local and western breakfast
+=== PENANG - TOP CRAZY OZZY CAFES ===
+1. The Mugshot Cafe
+Location: 302, Lebuh Chulia, George Town
+Opening Hours: 8:00 AM - 9:00 PM
+Price Range: RM15-30 per person
+Signature Items: Bagels, Yogurt, Coffee
+Interior: Vintage industrial
+Rating: 4.4/5
+Must Know: Famous for frozen yogurt, bagels
+2. Mews Cafe
+Location: 1, Jalan Mesjid, George Town
+Opening Hours: 9:00 AM - 5:00 PM
+Price Range: RM20-40 per person
+Signature Items: Coffee, Cakes, Pasta
+Interior: Heritage building, chic
+Rating: 4.3/5
+Must Know: Quiet courtyard setting
+3. Wheeler's
+Location: 67, Lebuh Bishop, George Town
+Opening Hours: 9:00 AM - 9:00 PM
+Price Range: RM15-30 per person
+Signature Items: Coffee, Pastries, Light Meals
+Interior: Bicycle-themed
+Rating: 4.2/5
+Must Know: Instagram-friendly decor
+4. China House
+Location: 153, Lebuh Pantai, George Town
+Opening Hours: 9:00 AM - 12:00 AM
+Price Range: RM30-60 per person
+Signature Items: Cake, Coffee, Pasta
+Interior: Heritage building, multiple rooms
+Rating: 4.3/5
+Must Know: Massive cake selection, live music
+=== LANGKAWI - TOP CRAZY OZZY CAFES ===
+1. The Brunch Cafe
+Location: Jalan Pantai Cenang, Cenang Beach
+Opening Hours: 8:00 AM - 5:00 PM
+Price Range: RM20-40 per person
+Signature Items: Breakfast, Coffee
+Interior: Modern beach cafe
+Rating: 4.3/5
+Must Know: Popular brunch spot
+2. Smiling Buffalo
+Location: Jalan Pantai Cenang, Padang Matsirat
+Opening Hours: 9:00 AM - 6:00 PM
+Price Range: RM15-35 per person
+Signature Items: Pizza, Coffee
+Interior: Rustic garden cafe
+Rating: 4.4/5
+Must Know: Relaxed atmosphere, outdoor seating
+3. Yellow Beach Cafe
+Location: Jalan Pantai Cenang
+Opening Hours: 9:00 AM - 11:00 PM
+Price Range: RM20-40 per person
+Signature Items: Coffee, Western Food
+Interior: Beachfront, relaxed
+Rating: 4.2/5
+Must Know: Sunset view
+=== WHAT TO ORDER ===
+- Flat White: Australian-style coffee with silky milk foam
+- Pour Over: Single-origin coffee brewed by hand
+- Avocado Toast: Popular brunch item
+- Sourdough Toast: Artisanal bread with toppings
+- All-Day Breakfast: Eggs, bacon, toast, sides
+- Cold Brew: Smooth, less acidic coffee
+=== TIPS FOR VISITING ===
+- Weekends are crowded, arrive before 10am
+- Most cafes close by 6-8pm (check hours)
+- WiFi is usually available
+- English is widely spoken
+- Card payment accepted at most
+- Some smaller cafes are cash-only
+Title: MALAYSIAN CUISINE: Complete Food Guide by Category
+Content:
+=== MALAY CUISINE ===
+1. Nasi Lemak
+Description: Coconut rice with sambal, fried chicken, egg, peanuts, cucumber
+Where to Eat: Village Park (KL), Wanjo (KL), local mamak shops
+Budget: RM8-15
+Best Time: Breakfast, any meal
+Halal: Yes
+2. Nasi Kandar
+Description: Steamed rice with variety of curries and side dishes
+Where to Eat: Line Clear (Penang), Pelita (KL), Kayu (KL)
+Budget: RM10-20
+Best Time: Lunch, dinner
+Halal: Yes
+3. Satay
+Description: Grilled meat skewers with peanut sauce, ketupat
+Where to Eat: Kajang Satay, Jalan Alor (KL), local night markets
+Budget: RM1-1.50 per stick
+Best Time: Evening, dinner
+4. Rendang
+Description: Slow-cooked dry beef curry with coconut and spices
+Where to Eat: Malay restaurants, authentic nasi padang
+Budget: RM10-25
+Halal: Yes
+=== CHINESE CUISINE ===
+1. Char Kuey Teow
+Description: Stir-fried flat rice noodles with prawns, cockles, egg, bean sprouts
+Where to Eat: Gurney Drive (Penang), Jalan Alor (KL)
+Budget: RM8-15
+Best in Penang
+Non-halal (contains pork lard)
+2. Hokkien Mee
+Description: Dark soy sauce fried noodles with pork and squid
+Where to Eat: Jalan Hokkien Mee (Penang), Taman Paramount (KL)
+Budget: RM10-18
+Best for: Dinner
+3. Bak Kut Teh
+Description: Herbal pork rib soup served with rice and youtiao
+Where to Eat: Klang (origin), Jalan Ipoh (KL), Sungai Way
+Budget: RM15-25 per person
+Best for: Breakfast, lunch
+Note: Non-halal
+4. Dim Sum
+Description: Steamed dumplings, buns, and small plates
+Where to Eat: Dolly Dim Sum (KL), Jin Xuan (KL)
+Budget: RM20-40 per person
+Best Time: Morning, lunch
+5. Wantan Mee
+Description: Egg noodles with BBQ pork, dumplings, and vegetables
+Where to Eat: Local kopitiam, hawker centers
+Budget: RM7-12
+Best for: Breakfast, lunch
+=== INDIAN CUISINE ===
+1. Banana Leaf Rice
+Description: Rice served on banana leaf with curries and vegetables
+Where to Eat: Sri Paandi (KL), Devi's Corner (Bangsar)
+Budget: RM10-20
+Vegetarian options available
+Halal: Most are not halal (unless specified)
+2. Roti Canai
+Description: Flaky flatbread with dhal curry
+Where to Eat: Any mamak shop
+Budget: RM2-5
+Best for: Breakfast, supper (24h)
+Halal: Yes
+3. Nasi Briyani
+Description: Spiced rice with chicken, mutton, or fish
+Where to Eat: Briyani King (KL), local Indian restaurants
+Budget: RM12-25
+Halal: Most are halal
+4. Tandoori Chicken
+Description: Yogurt-marinated chicken baked in clay oven
+Where to Eat: Indian restaurants
+Budget: RM15-25
+Halal: Most are halal
+=== SEAFOOD ===
+1. Butter Prawns
+Description: Prawns in creamy butter sauce with curry leaves
+Where to Eat: Overseas Restaurant (KL), Wonderland (Langkawi)
+Budget: RM30-60 per dish
+Best for: Dinner
+2. Chili Crab
+Description: Crab in sweet-spicy tomato-chili sauce
+Where to Eat: Fishing Village (KL), Jalan Alor (KL)
+Budget: RM50-100 per crab
+Best for: Dinner, sharing
+3. Steamed Fish (Siakap/Red Snapper)
+Description: Fresh fish steamed with soy sauce, ginger, and scallions
+Where to Eat: Seafood restaurants
+Budget: RM40-80
+Best for: Dinner
+4. Grilled Fish (Ikan Bakar)
+Description: Fish grilled with spicy sambal wrapped in banana leaf
+Where to Eat: Ikan Bakar roadside stalls, seafood restaurants
+Budget: RM15-30
+Best for: Dinner
+=== STREET FOOD & HAWKER CENTERS ===
+1. Jalan Alor Food Street, KL
+Opening Hours: 5pm-2am
+Must Try: Satay, Grilled Seafood, Durian
+Budget: RM5-30
+2. Gurney Drive Hawker Centre, Penang
+Opening Hours: 5pm-11pm
+Must Try: Char Kuey Teow, Asam Laksa, Hokkien Mee
+Budget: RM5-15
+3. Jonker Street Night Market, Malacca
+Opening Hours: Weekend 6pm-11pm
+Must Try: Chicken Rice Balls, Cendol, Satay Celup
+Budget: RM5-20
+4. Lot 10 Hutong, KL
+Opening Hours: 10am-10pm
+Must Try: Curated hawker stalls, indoor air-conditioned
+Budget: RM10-20
+5. Central Market Food Court, KL
+Opening Hours: 10am-8pm
+Must Try: Laksa, Nasi Lemak, Cendol
+Budget: RM5-15
+=== DESSERTS & SWEETS ===
+1. Cendol
+Description: Shaved ice with green rice flour jelly, coconut milk, palm sugar
+Where to Eat: Penang Road Famous Cendol, local stalls
+Budget: RM3-5
+2. ABC (Ais Batu Campur)
+Description: Shaved ice with red beans, jelly, corn, syrup, condensed milk
+Where to Eat: Any hawker center, mamak
+Budget: RM3-6
+3. Durian
+Description: King of fruits, creamy custard-like flesh
+Where to Eat: Jalan Alor (KL), Balik Pulau (Penang)
+Season: June-August
+Budget: RM20-100 per fruit
+Note: Strong smell, not allowed in hotels
+4. Kuih
+Description: Traditional Malay cakes and desserts
+Where to Eat: Morning markets, pasar malam
+Budget: RM1-3 per piece
+Varieties: Kuih Lapis, Onde-onde, Seri Muka
